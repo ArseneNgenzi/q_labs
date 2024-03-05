@@ -8,6 +8,35 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.translate-z-0 {
+  transform: translateZ(0px);
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: #ee6c4d;
+}
+
+#about .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+#about .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: #ee6c4d;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: #ee6c4d;
+}
+
+#team .swiper-button-next:after,
+#team .swiper-button-prev:after,
+#team .swiper-button-next:after,
+#team .swiper-rtl .swiper-button-prev:after {
+  color: #ee6c4d;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -29,5 +58,24 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .h2 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  .btn,
+  .input {
+    @apply h-[52px];
+  }
+
+  .input {
+    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+  }
+  .input,
+  .textarea {
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+  }
+  .textarea {
+    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
 }
