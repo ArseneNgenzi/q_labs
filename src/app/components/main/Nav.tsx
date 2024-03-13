@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+
 // icons
 import {
 	HiHome,
@@ -13,7 +15,7 @@ import { scrolltoHash } from "../../../../variants";
 // nav data
 export const navData = [
 	{ name: "home", path: "top", icon: <HiHome /> },
-	{ name: "services", path: "services", icon: <HiWrenchScrewdriver/> },
+	{ name: "services", path: "Bservices", icon: <HiWrenchScrewdriver/> },
 	{ name: "about", path: "about", icon: <HiBookOpen /> },
 	{ name: "work", path: "work", icon: <HiBriefcase /> },
 	{
@@ -27,8 +29,29 @@ export const navData = [
 
 const Nav = () => {
 
-	// const router = useRouter()
-	// const pathname = router.pathname
+	const [windowSize, setWindowSize] = useState(
+		{
+			width: typeof window !== 'undefined' ? window.innerWidth : 0,
+		}
+	)
+
+
+	useEffect(() => {
+		const handleResize = () => {
+		  setWindowSize({
+			width: window.innerWidth,
+		  });
+		  console.log(windowSize);
+		};
+	
+		// event listener to window resize
+		window.addEventListener('resize', handleResize);
+	
+		// Remove event listener on component unmount
+		return () => {
+		  window.removeEventListener('resize', handleResize);
+		};
+	  }, [windowSize]); 
 
 	return (
 		<nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max  mt-auto xl:right-[1%] z-50 bottom-0 w-full xl:w-10 xl:max-w-md xl:h-screen">
@@ -39,7 +62,7 @@ const Nav = () => {
 						<button 
 							key={index}  
 							className={`   relative flex items-center group hover:text-accent transition-all duration-300` }
-							onClick={() => scrolltoHash(link.path)}
+							onClick={() => scrolltoHash(link.name === 'services' && windowSize.width < 1280 ? 'Sservices' : link.path)}
 						>
 							
 							{/* tooltip */}

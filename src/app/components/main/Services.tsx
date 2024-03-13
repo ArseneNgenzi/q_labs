@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+// import React, {useState, useEffect} from 'react'
 
 import { motion } from "framer-motion";
 import { fadeIn, scrolltoHash } from "../../../../variants";
@@ -41,6 +41,7 @@ const serviceData = [
   ];
 
 const Services = () => {
+
   return (
     <div>
 			{/* BIG SCREENS */}
