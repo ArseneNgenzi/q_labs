@@ -1,10 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import React from 'react'
+import {useState, useEffect} from 'react'
 import { fadeIn } from '../../../../variants'
 import Link from 'next/link';
 import { RxArrowTopRight } from 'react-icons/rx';
+import AnimatedDiv from '../AnimatedDiv';
 
 
 // Data
@@ -16,19 +17,19 @@ const workSlides = {
 			path: "/thumb1.jpg",
 			href: "https://www.google.com/",
 		},
-		{
-			title: "Mubi Cyane",
-			path: "/thumb2.jpg",
-			href: "https://www.google.com/",
-		},
+		// {
+		// 	title: "Mubi Cyane",
+		// 	path: "/thumb2.jpg",
+		// 	href: "https://www.google.com/",
+		// },
 		{
 			title: "Pussy ass nigga",
-			path: "/thumb3.jpg",
+			path: "/thumb4.jpg",
 			href: "https://www.google.com/",
 		},
 		{
 			title: "Methode",
-			path: "/thumb4.jpg",
+			path: "/thumb3.jpg",
 			href: "https://www.google.com/",
 		},
 		{
@@ -36,27 +37,28 @@ const workSlides = {
 			path: "/thumb1.jpg",
 			href: "https://www.google.com/",
 		},
-		{
-			title: "Mu rw'intare",
-			path: "/thumb2.jpg",
-			href: "https://www.google.com/",
-		},
+		// {
+		// 	title: "Mu rw'intare",
+		// 	path: "/thumb2.jpg",
+		// 	href: "https://www.google.com/",
+		// },
 		{
 			title: "Gatsata",
-			path: "/thumb3.jpg",
+			path: "/thumb4.jpg",
 			href: "https://www.google.com/",
 		},
 		{
 			title: "Karongi",
-			path: "/thumb4.jpg",
+			path: "/thumb3.jpg",
 			href: "https://www.google.com/",
 		},
 	],
 };
 
 const Work = () => {
+	const [isVisible, setIsVisible] = useState(false);
   return (
-    <div className="h-auto lg:h-screen bg-secondary xl:px-4 " id="work">
+    <div className="h-auto bg-secondary/50 xl:px-4 " id="work">
 				<div className="  ">
 					{/* <Circles /> */}
 					<div className="container mx-auto h-full">
@@ -89,12 +91,12 @@ const Work = () => {
 								exit="hidden"
 								className=" w-full   pb-10 h-full px-8"
 							>
-								{/* <WorkSlider /> */}
-								<div className=" grid gap-4 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+								<div className=" grid gap-4 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 									{workSlides.slides.map((slide, index) => (
-										<div className=" relative group rounded-md" key={index}>
-											<img src={slide.path} className=" rounded-md h-[280px] object-cover" />
-											<div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 top-0 flex flex-col justify-center items-center text-xl bg-secondary/90 text-accent font-semibold ">
+										<div className=" relative group rounded-md overflow-hidden" key={index}>
+											<img src={slide.path} className=" rounded-md md:h-[280px] w-full object-cover" />
+											<div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 top-0 left-0 right-0 flex flex-col justify-center items-center text-xl bg-secondary/90 text-accent font-semibold ">
 												<p>{slide.title}</p>
 												<Link
 													href={slide.href}

@@ -14,8 +14,8 @@ import { scrolltoHash } from "../../../../variants";
 export const navData = [
 	{ name: "home", path: "top", icon: <HiHome /> },
 	{ name: "services", path: "services", icon: <HiWrenchScrewdriver/> },
-	{ name: "work", path: "work", icon: <HiBriefcase /> },
 	{ name: "about", path: "about", icon: <HiBookOpen /> },
+	{ name: "work", path: "work", icon: <HiBriefcase /> },
 	{
 		name: "team",
 		path: "team",

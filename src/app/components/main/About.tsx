@@ -62,7 +62,7 @@ const About = () => {
 
   return (
     <div
-				className=" h-auto lg:h-screen bg-secondary/50   pb-8 px-4"
+				className=" h-auto xl:h-screen bg-secondary  pb-8 px-4"
 				id="about"
 			>
 				<div className="  text-center xl:text-left h-full flex flex-col ">
@@ -100,7 +100,7 @@ const About = () => {
 							necessitatibus?
 						</motion.p>
 					</div>
-					<div className=" container mx-auto  flex flex-col lg:flex-row items-center justify-center gap-x-6 flex-1">
+					<div className=" container mx-auto  flex flex-col lg:flex-row items-center justify-center gap-x-6 flex-1 py-4">
 						<div className="  flex flex-col justify-center items-center w-full lg:w-1/2 lg:border-r lg:border-accent/30">
 							<motion.h2
 								className=" text-[1.5rem] md:text-[2rem] lg:text-5xl text-center mb-8  font-bold"

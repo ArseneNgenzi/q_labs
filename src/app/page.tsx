@@ -8,12 +8,14 @@ import Services from "./components/main/Services";
 import Work from "./components/main/Work";
 import About from "./components/main/About";
 import Contact from "./components/main/Contact";
+import { Suspense } from "react";
 
 
 export default function Home() {
 	
 
 	return (
+		<Suspense fallback={'Loading...'}>
 		<div className=" text-gray-400">
 			{/* HOME */}
 
@@ -23,13 +25,13 @@ export default function Home() {
 
 			<Services />
 
-			{/* Work */}
-
-			<Work/>
-
 			{/* About */}
 
 			<About/>
+
+			{/* Work */}
+
+			<Work/>
 
 			{/* TEAM */}
 
@@ -45,5 +47,6 @@ export default function Home() {
 				<Nav />
 			</div>
 		</div>
+		</Suspense>
 	);
 }

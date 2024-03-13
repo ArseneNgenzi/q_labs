@@ -12,15 +12,15 @@ const Landing = () => {
   return (
     <div className="  h-screen relative  " id="top">
 				{/* text */}
-				<div className="w-[90%] mx-auto flex pt-12 lg:pt-0 items-start relative h-full  md:flex md:items-center lg:flex">
-					<div className="text-center flex flex-col justify-center bg-transparent md:bg-accent/50 lg:bg-transparent items-center xl:text-left  container mx-auto lg:w-1/2 order-2 lg:h-full z-50 ">
+				<div className="w-[90%] mx-auto flex pt-28 md:pt-0 relative h-full items-start md:items-center">
+					<div className="text-center sm:w-3/4 sm:text-secondary lg:text-inherit flex flex-col justify-center bg-transparent sm:bg-white/70 sm:p-8 sm:rounded-lg lg:bg-transparent items-center xl:text-left  container mx-auto lg:w-1/2 order-2 lg:h-full z-50 ">
 						{/* title */}
 						<motion.h1
 							variants={fadeIn("down", 0.2)}
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className=" text-[2rem] font-bold mb-4 lg:mb-0 lg:h2 "
+							className=" text-[2rem] font-bold mb-4 lg:mb-0 lg:text-[3rem] xl:h2 "
 						>
 							Transforming Ideas <br /> Into{" "}
 							<span className="text-accent">Digital Reality</span>
@@ -68,7 +68,8 @@ const Landing = () => {
 						/>
 					</div>
 					<ParticlesContainer />
-					<div className=" absolute hidden md:block lg:hidden top-0 bottom-0 left-0 right-0">
+					{/* <div className=' absolute bg-secondary bottom-0 top-0 left-0 right-0 -z-50'></div> */}
+					<div className=" absolute hidden sm:block lg:hidden top-0 bottom-0 left-0 right-0">
 						<motion.img
 							variants={fadeIn("up", 0.2)}
 							initial="hidden"
@@ -97,16 +98,16 @@ const Landing = () => {
           <Avatar/>
         </motion.div> */}
 				</div>
-				<motion.div 
+				{/* <motion.div 
 				variants={fadeIn("down", 0.4)}
 				initial="hidden"
 				animate="show"
 				exit="hidden"
 				className=" absolute left-[45%] lg:left-[50%] bottom-[20%] lg:bottom-[15%] z-50">
-					<button onClick={() => scrolltoHash("team")}>
+					<button onClick={() => scrolltoHash("services")}>
 						<BsArrowDown className=" text-4xl" />
 					</button>
-				</motion.div>
+				</motion.div> */}
 			</div>
   )
 }

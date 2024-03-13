@@ -44,7 +44,7 @@ const Services = () => {
   return (
     <div>
 			{/* BIG SCREENS */}
-			<div className=" mt-8 hidden xl:flex items-center px-4 " id="services">
+			<div className=" mt-8 hidden xl:flex items-center px-4 " id="Bservices">
 				{/* <Circles /> */}
 				<div className="container mx-auto flex flex-col justify-center  ">
 					<div className=" flex flex-col lg:flex-row lg:items-center gap-x-8 px-4">
@@ -86,7 +86,7 @@ const Services = () => {
 
 			{/* SMALL SCREENS */}
 
-			<div className="h-auto block  xl:hidden bg-secondary/30 sm:px-4 " id="services">
+			<div className="h-auto block  xl:hidden bg-secondary/30 sm:px-4 " id="Sservices">
 				<div className="  ">
 					{/* <Circles /> */}
 					<div className="container mx-auto h-full">
@@ -120,7 +120,7 @@ const Services = () => {
 								className=" w-full   pb-10 h-full px-8"
 							>
 								{/* <WorkSlider /> */}
-								<div className=" grid gap-4 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+								<div className=" grid gap-4 lg:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 								{serviceData.map((item, index) => {
           return (
             // <SwiperSlide key={index}>

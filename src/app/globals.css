@@ -28,6 +28,7 @@
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
   color: #ee6c4d;
+  
 }
 
 #team .swiper-button-next:after,
@@ -35,6 +36,15 @@
 #team .swiper-button-next:after,
 #team .swiper-rtl .swiper-button-prev:after {
   color: #ee6c4d;
+  font-size: large;
+}
+
+#about .swiper-button-next:after,
+#about .swiper-button-prev:after,
+#about .swiper-button-next:after,
+#about .swiper-rtl .swiper-button-prev:after {
+  color: #ee6c4d;
+  font-size: large;
 }
 
 @media (prefers-color-scheme: dark) {
