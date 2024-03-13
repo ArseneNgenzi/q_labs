@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Socials from "../Socials";
 import { HiLocationMarker, HiMail } from "react-icons/hi";
 import { HiPhone } from "react-icons/hi2";
@@ -14,6 +14,32 @@ import {
 } from "react-icons/ri";
 
 const Footer = () => {
+
+	const [windowSize, setWindowSize] = useState(
+		{
+			width: typeof window !== 'undefined' ? window.innerWidth : 0,
+		}
+	)
+
+
+	useEffect(() => {
+		const handleResize = () => {
+		  setWindowSize({
+			width: window.innerWidth,
+		  });
+		  console.log(windowSize);
+		};
+	
+		// event listener to window resize
+		window.addEventListener('resize', handleResize);
+	
+		// Remove event listener on component unmount
+		return () => {
+		  window.removeEventListener('resize', handleResize);
+		};
+	  }, [windowSize]); 
+
+
 	let yearr = new Date().getFullYear();
 
 	return (
@@ -79,7 +105,7 @@ const Footer = () => {
 							About
 						</button>
 						<button
-							onClick={() => scrolltoHash("services")}
+							onClick={() => scrolltoHash(windowSize.width < 1280 ? 'Sservices' : 'Bservices')}
 							className="hover:text-secondary mr-4"
 						>
 							Services
